@@ -1,5 +1,9 @@
 ﻿using System;
 using Autofac;
+using SimpleLibrary.Book.UnitOfWorks;
+using SimpleLibrary.Core.Contexts;
+using SimpleLibrary.Core.Repositories;
+using SimpleLibrary.Core.Services;
 
 namespace SimpleLibrary.Core
 {
@@ -18,6 +22,21 @@ namespace SimpleLibrary.Core
         protected override void Load(ContainerBuilder builder)
         {
          
+            builder.RegisterType<LibraryContext>()
+                .WithParameter("connectionString", _connectionString)
+                .WithParameter("migrationAssemblyName", _migrationAssemblyName)
+                .InstancePerLifetimeScope();
+            
+            builder.RegisterType<BookunitOfWork>().As<IBookUnitOfWork>()
+                //.WithParameter("connectionString", _connectionString)
+                //.WithParameter("migrationAssemblyName", _migrationAssemblyName)
+                .InstancePerLifetimeScope();
+
+            builder.RegisterType<BookRepository>().As<IBookRepository>()
+                .InstancePerLifetimeScope();
+
+            builder.RegisterType<BookService>().As<IBookService>()
+                .InstancePerLifetimeScope();
             base.Load(builder);
         }
     }
