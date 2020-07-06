@@ -1,4 +1,9 @@
-$HEADER$namespace $NAMESPACE$
+using Microsoft.EntityFrameworkCore;
+
+namespace SimpleLibrary.Book.Contexts
 {
-  public interface $INTERFACE$ {$END$}
+    public interface IBookContext
+    {
+        DbSet<Entities.Book> Books { get; set; }
+    }
 }

@@ -1,4 +1,9 @@
-$HEADER$namespace $NAMESPACE$
+using SimpleLibrary.Data;
+
+namespace SimpleLibrary.Core.UnitOfWorks
 {
-  public interface $INTERFACE$ {$END$}
+    public interface ICoreUnitOfWork:IUnitOfWork
+    {
+        
+    }
 }

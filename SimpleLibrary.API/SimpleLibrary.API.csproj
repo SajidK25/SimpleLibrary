@@ -19,5 +19,10 @@
       <PackageReference Include="Serilog.Sinks.MSSqlServer" Version="5.5.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\SimpleLibrary.Book\SimpleLibrary.Book.csproj" />
+      <ProjectReference Include="..\SimpleLibrary.Core\SimpleLibrary.Core.csproj" />
+    </ItemGroup>
+
 
 </Project>
