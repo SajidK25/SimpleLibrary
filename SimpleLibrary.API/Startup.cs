@@ -13,10 +13,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using SimpleLibrary.Book;
-using SimpleLibrary.Book.Contexts;
 using SimpleLibrary.Core;
 using SimpleLibrary.Core.Contexts;
+using SimpleLibrary.Data;
 
 namespace SimpleLibrary.API
 {
@@ -43,7 +42,9 @@ namespace SimpleLibrary.API
             var migrationAssemblyName = typeof(Startup).Assembly.FullName;
 
             builder.RegisterModule(new CoreModule(connectionString, migrationAssemblyName));
-            builder.RegisterModule(new BookModule(connectionString, migrationAssemblyName));
+            builder.RegisterModule(new DataModule());
+
+//            builder.RegisterModule(new BookModule(connectionString, migrationAssemblyName));
 //            builder.RegisterModule(new TenantModule(connectionString, migrationAssemblyName));
         }
 

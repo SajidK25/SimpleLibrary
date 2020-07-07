@@ -1,19 +1,21 @@
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.Extensions.Logging;
-using SimpleLibrary.Book.UnitOfWorks;
+using SimpleLibrary.Core.Entities;
+using SimpleLibrary.Core.UnitOfWorks;
 
 namespace SimpleLibrary.Core.Services
 {
     public class BookService:IBookService
     {
-        private IBookUnitOfWork _bookUnitOfWork;
+        private ICoreUnitOfWork _coreUnitOfWork;
         private readonly ILogger<BookService> _logger;
-        public BookService(IBookUnitOfWork bookUnitOfWork,ILogger<BookService> logger)
+        public BookService(ICoreUnitOfWork coreUnitOfWork,ILogger<BookService> logger)
         {
-            _bookUnitOfWork = bookUnitOfWork;
+            _coreUnitOfWork = coreUnitOfWork;
             _logger = logger;
         }
-        public IEnumerable<Entities.Book> GetBooks(
+        public IEnumerable<Book> GetBooks(
             int pageIndex, 
             int pageSize, 
             string searchText, 
@@ -21,25 +23,26 @@ namespace SimpleLibrary.Core.Services
             out int total,
             out int totalFiltered)
         {
+            
             throw new System.NotImplementedException();
         }
 
-        public IEnumerable<Entities.Book> Get()
+        public IEnumerable<Book> Get()
         {
-            throw new System.NotImplementedException();
+            return _coreUnitOfWork.BookRepository.GetAll();
         }
 
-        public void AddNewBook(Entities.Book book)
+        public void AddNewBook(Book book)
         {
-            throw new System.NotImplementedException();
+            _coreUnitOfWork.BookRepository.Add(book);
         }
 
-        public Entities.Book GetBook(int id)
+        public Book GetBook(int id)
         {
-            throw new System.NotImplementedException();
+            return _coreUnitOfWork.BookRepository.GetById(id);
         }
 
-        public void EditBook(Entities.Book book)
+        public void EditBook(Book book)
         {
             throw new System.NotImplementedException();
         }

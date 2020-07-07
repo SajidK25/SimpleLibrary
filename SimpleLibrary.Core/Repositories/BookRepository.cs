@@ -6,18 +6,13 @@ using SimpleLibrary.Data;
 
 namespace SimpleLibrary.Core.Repositories
 {
-    public class BookRepository:Repository<Entities.Book,int,LibraryContext>,IBookRepository
+    public class BookRepository:Repository<Book,int,LibraryContext>,IBookRepository
     {
         private LibraryContext _libraryContext;
         public BookRepository(LibraryContext libraryContext) 
             : base(libraryContext)
         {
             _libraryContext = libraryContext;
-        }
-
-        public IEnumerable<Entities.Book> GetAllBooks()
-        {
-            return _libraryContext.Books.ToList();
         }
     }
 }

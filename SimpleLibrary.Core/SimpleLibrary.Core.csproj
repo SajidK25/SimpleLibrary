@@ -12,7 +12,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\SimpleLibrary.Book\SimpleLibrary.Book.csproj" />
       <ProjectReference Include="..\SimpleLibrary.Data\SimpleLibrary.Data.csproj" />
     </ItemGroup>
 

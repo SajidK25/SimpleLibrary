@@ -5,8 +5,7 @@ using SimpleLibrary.Data;
 
 namespace SimpleLibrary.Core.Repositories
 {
-    public interface IBookRepository:IRepository<Entities.Book,int,LibraryContext>
+    public interface IBookRepository:IRepository<Book,int,LibraryContext>
     {
-        IEnumerable<Entities.Book> GetAllBooks();
     }
 }

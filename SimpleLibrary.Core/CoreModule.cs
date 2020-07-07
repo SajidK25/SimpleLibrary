@@ -1,9 +1,9 @@
 ﻿using System;
 using Autofac;
-using SimpleLibrary.Book.UnitOfWorks;
 using SimpleLibrary.Core.Contexts;
 using SimpleLibrary.Core.Repositories;
 using SimpleLibrary.Core.Services;
+using SimpleLibrary.Core.UnitOfWorks;
 
 namespace SimpleLibrary.Core
 {
@@ -27,7 +27,7 @@ namespace SimpleLibrary.Core
                 .WithParameter("migrationAssemblyName", _migrationAssemblyName)
                 .InstancePerLifetimeScope();
             
-            builder.RegisterType<BookunitOfWork>().As<IBookUnitOfWork>()
+            builder.RegisterType<CoreUnitOfWork>().As<ICoreUnitOfWork>()
                 //.WithParameter("connectionString", _connectionString)
                 //.WithParameter("migrationAssemblyName", _migrationAssemblyName)
                 .InstancePerLifetimeScope();
@@ -37,6 +37,7 @@ namespace SimpleLibrary.Core
 
             builder.RegisterType<BookService>().As<IBookService>()
                 .InstancePerLifetimeScope();
+            
             base.Load(builder);
         }
     }

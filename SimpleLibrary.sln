@@ -4,8 +4,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleLibrary.API", "Simple
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleLibrary.Data", "SimpleLibrary.Data\SimpleLibrary.Data.csproj", "{10EC52DB-D644-45F4-B1D7-9AD440668A49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleLibrary.Student", "SimpleLibrary.Student\SimpleLibrary.Student.csproj", "{0E00D2C9-9FE4-4DF4-BE31-1CC2E8242C59}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleLibrary.Core", "SimpleLibrary.Core\SimpleLibrary.Core.csproj", "{D4655471-5AE9-49D0-B402-073296C4A69B}"
 EndProject
 Global
@@ -22,10 +20,6 @@ Global
 		{10EC52DB-D644-45F4-B1D7-9AD440668A49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10EC52DB-D644-45F4-B1D7-9AD440668A49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10EC52DB-D644-45F4-B1D7-9AD440668A49}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0E00D2C9-9FE4-4DF4-BE31-1CC2E8242C59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0E00D2C9-9FE4-4DF4-BE31-1CC2E8242C59}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0E00D2C9-9FE4-4DF4-BE31-1CC2E8242C59}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0E00D2C9-9FE4-4DF4-BE31-1CC2E8242C59}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D4655471-5AE9-49D0-B402-073296C4A69B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D4655471-5AE9-49D0-B402-073296C4A69B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4655471-5AE9-49D0-B402-073296C4A69B}.Release|Any CPU.ActiveCfg = Release|Any CPU
